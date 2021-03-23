@@ -1,0 +1,1 @@
+<div class=""><small>Copyright © Your Website 2020</small></div>
