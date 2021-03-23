@@ -1,6 +1,6 @@
 <?php
 
-require "Models/Database.php";
+require "../Models/Database.php";
 
 class ConnexionAdmin extends Database
 {

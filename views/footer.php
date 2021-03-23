@@ -1,1 +1,7 @@
-<div class=""><small>Copyright © Your Website 2020</small></div>
+<table class="table table-hover">
+    <tbody>
+        <tr class="table-active text-center">
+            <td>Copyright © Your Website 2020</td>
+        </tr>
+    </tbody>
+</table>

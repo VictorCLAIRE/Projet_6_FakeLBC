@@ -1,17 +1,17 @@
 <?php
 
-require "Models/Database.php";
+require_once "../models/Database.php";
 
 class LectureClefEtrangere extends Database
 {
-    public function LectureDepartement(){
+    public function LectureRegion(){
 
         $db = $this-> getPDO();
-        $req = $db->query("SELECT * FROM projet_6_departement");
+        $req = $db->query("SELECT * FROM projet_6_regions");
 
         foreach($req as $row){
             ?>
-            <option value="<?= $row['id_departement']?>"><?= $row['nom_departement']?></option>
+            <option value="<?= $row['id_region']?>"><?= $row['name_region']?></option>
             <?php
         }
     }
@@ -19,7 +19,7 @@ class LectureClefEtrangere extends Database
     public function LectureCategorie(){
 
         $db = $this-> getPDO();
-        $req = $db->query("SELECT * FROM projet_6_categorie");
+        $req = $db->query("SELECT * FROM projet_6_categories");
 
         foreach($req as $row){
             ?>
