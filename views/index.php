@@ -16,16 +16,31 @@ if (isset($_GET['url'])) {
 }
 
 // ROUTES
-if ($url === "accueil") {
+if ($url === "accueil" || $url === "accueil.php" ) {
     $title = "Accueil - Le MAUVAIS coin";
     ShowAllAnnonce();
 
-
-
-}elseif ($url === "connexion"){
+}elseif ($url === "connexion" || $url === "connexion.php" ){
     $title = "Connexion - Le MAUVAIS coin";
-    require_once "connexion.php";
+    require_once "../views/connexion.php";
+
+}elseif ($url === "deconnexion" || $url === "deconnexion.php" ){
+    require_once "../views/deconnexion.php";
+
+}elseif ($url === "inscription" || $url === "inscription.php" ){
+    Inscription();
+
+}elseif ($url === "validationInscription" || $url === "validationInscription.php" ){
+    ValidationInscription();
+
+}elseif ($url === "mesAnnonces" || $url === "mesAnnonces.php" ){
+    CreatNewAnnonce();
 }
+
+
+
+
+
 
 
 

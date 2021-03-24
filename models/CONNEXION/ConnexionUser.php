@@ -1,6 +1,6 @@
 <?php
 
-require "../Models/Database.php";
+require_once "../Models/Database.php";
 
 class ConnexionUser extends Database
 {
@@ -8,9 +8,9 @@ class ConnexionUser extends Database
 
         $db = $this-> getPDO();
 
-        if (!empty($_POST['email_user_loger']) && !empty($_POST['mdp_user_loger'])) {
+        if (!empty($_POST['email_user_loger']) && !empty($_POST['password_user_loger'])) {
 
-            $sql = "SELECT * FROM projet_6_user WHERE email_user = ? AND password_user=?";
+            $sql = "SELECT * FROM projet_6_user WHERE email_user = ? AND password_user = ?";
 
             $req = $db->prepare($sql);
 
@@ -26,11 +26,12 @@ class ConnexionUser extends Database
                 $_SESSION['connecter_user'] = true;
                 $_SESSION['email_user'] = $_POST['email_user'];
                 $_SESSION['name_user'] = $row['name_user'];
+                $_SESSION['ID_user'] = $row['id_user'];
 
-                echo "FAIRE UNE REDIRECTION";
-                //header("location:http://localhost/Projet_5_Gite_new/Admin.php");
+
+                header("location:http://localhost/Projet_6_FakeLBC/accueil");
             } else {
-                echo "L'email ou le mdp n'est pas bon";
+                echo "L'email ou le mdp n'est pas bon (user)";
             }
 
         } elseif (empty($_POST['email_user_loger']) || empty($_POST['password_user_loger'])) {
@@ -38,6 +39,7 @@ class ConnexionUser extends Database
             echo "<div class='alert alert-danger m-2 text-center' role='alert'>Merci de remplir tous les champs</div>";
 
         } else {
+            echo "ERRREUR ELSE";
         }
 
     }

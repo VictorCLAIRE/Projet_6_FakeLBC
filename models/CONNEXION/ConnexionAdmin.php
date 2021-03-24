@@ -1,16 +1,16 @@
 <?php
 
-require "../Models/Database.php";
+require_once "../Models/Database.php";
 
 class ConnexionAdmin extends Database
 {
-    public function VerificationAdmin(){
+    public function  VerificationAdmin(){
 
         $db = $this-> getPDO();
 
-        if (!empty($_POST['email_admin_loger']) && !empty($_POST['mdp_admin_loger'])) {
+        if (!empty($_POST['email_admin_loger']) && !empty($_POST['password_admin_loger'])) {
 
-            $sql = "SELECT * FROM projet_6_admin WHERE email_admin = ? AND password_admin=?";
+            $sql = "SELECT * FROM projet_6_admin WHERE email_admin = ? AND password_admin = ?";
 
             $req = $db->prepare($sql);
 
@@ -20,17 +20,18 @@ class ConnexionAdmin extends Database
             $req->execute();
             $row=$req->fetch(PDO::FETCH_ASSOC);
 
+
             if (($_POST['email_admin_loger'] == $row['email_admin']) && ($_POST['password_admin_loger'] == $row['password_admin'])) {
 
                 session_start();
                 $_SESSION['connecter_admin'] = true;
-                $_SESSION['email_admin'] = $_POST['email_admin'];
+                $_SESSION['email_admin'] = $row['email_admin'];
                 $_SESSION['name_admin'] = $row['name_admin'];
 
-                echo "FAIRE UNE REDIRECTION admin";
-                //header("location:http://localhost/Projet_5_Gite_new/Admin.php");
+                header("location:http://localhost/Projet_6_FakeLBC/accueil");
+
             } else {
-                echo "L'email ou le mdp n'est pas bon";
+                echo "L'email ou le mdp n'est pas bon (admin)";
             }
 
         } elseif (empty($_POST['email_admin_loger']) || empty($_POST['password_admin_loger'])) {
@@ -38,6 +39,7 @@ class ConnexionAdmin extends Database
             echo "<div class='alert alert-danger m-2 text-center' role='alert'>Merci de remplir tous les champs</div>";
 
         } else {
+            echo "Else vide";
         }
 
     }

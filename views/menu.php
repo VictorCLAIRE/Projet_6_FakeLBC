@@ -16,23 +16,24 @@
         //VISITEUR
         if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] == true){
         ?>
-            <li class="nav-item active">USER : <?=$_SESSION['email_user']?></li>
-            <li class="nav-item active"><a class="nav-link" href="admin.php">MES ANNONCES</a></li>
-            <li class="nav-item active"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">USER : <?=$_SESSION['name_user']?></a></li>
+            <li class="nav-item active"><a class="nav-link" href="mesAnnonces">MES ANNONCES</a></li>
+            <li class="nav-item active"><a class="nav-link" href="deconnexion.php">DECONNEXION</a></li>
 
         <?php
         //USER
         }elseif (isset($_SESSION['connecter_admin']) && $_SESSION['connecter_admin'] == true){
         ?>
-            <li class="nav-item active">USER : <?=$_SESSION['email_admin']?></li>
-            <li class="nav-item active"><a class="nav-link" href="admin.php">GESTION DES ANNONCES</a></li>
-            <li class="nav-item active"><a class="nav-link" href="admin.php">GESTION DES USER</a></li>
-            <li class="nav-item active"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">ADMIN: <?=$_SESSION['name_admin']?></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">GESTION DES ANNONCES</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">GESTION DES USER</a></li>
+            <li class="nav-item active"><a class="nav-link" href="deconnexion.php">DECONNEXION</a></li>
         <?php
         //ADMIN
         }else{
         ?>
-        <li class="nav-item active"><a class="nav-link" href="admin.php">INSCRIPTION</a></li>
+        <li class="nav-item active"><a class="nav-link" href="connexion">CONNEXION</a></li>
+        <li class="nav-item active"><a class="nav-link" href="inscription">INSCRIPTION</a></li>
         <?php
         }
         ?>
