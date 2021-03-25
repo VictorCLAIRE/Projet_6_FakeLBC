@@ -6,6 +6,7 @@
 
 
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <title><?= $title ?></title>
 </head>

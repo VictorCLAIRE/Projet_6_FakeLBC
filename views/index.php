@@ -16,7 +16,7 @@ if (isset($_GET['url'])) {
 }
 
 // ROUTES
-if ($url === "accueil" || $url === "accueil.php" ) {
+if ($url == "accueil" ) {
     $title = "Accueil - Le MAUVAIS coin";
     ShowAllAnnonce();
 
@@ -34,14 +34,17 @@ if ($url === "accueil" || $url === "accueil.php" ) {
     ValidationInscription();
 
 }elseif ($url === "mesAnnonces" || $url === "mesAnnonces.php" ){
-    CreatNewAnnonce();
+    ReadAllAnnonceUser();
+
+}elseif ($url === "newAnnonce" || $url === "newAnnonce.php" ){
+    CreateNewAnnonce();
+
+}elseif ($url === "updateAnnonce" || $url === "updateAnnonce.php" ){
+    UpdateAnnonce();
+
+}elseif ($url === "deleteAnnonce" || $url === "deleteAnnonce.php" ){
+    DeleteAnnonce();
 }
-
-
-
-
-
-
 
 
 

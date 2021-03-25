@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">ACCUEIL
+        <a class="nav-link" href="accueil">ACCUEIL
           <span class="sr-only">(current)</span>
         </a>
       </li>
