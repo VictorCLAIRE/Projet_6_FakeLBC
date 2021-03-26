@@ -47,7 +47,7 @@ $ClasseReadUser->ReadAnnonceID();
     <div class="col-sm-8">
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name_update_annonce">Name annonce</label>
+                <label for="name_update_annonce">Name admin</label>
                 <input class="form-control" required type="text" id="name_update_annonce" name="name_update_annonce">
             </div>
             <div class="form-group">

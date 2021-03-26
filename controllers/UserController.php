@@ -45,6 +45,7 @@ require_once "../models/CRUD/CRUD_USER/ReadUser.php";
         }
 
     }
+
     function DeleteAnnonce(){
         $ReadAnnonceById = new ReadUser();
         $ShowIDAnnonce=$ReadAnnonceById->ReadAnnonceID();

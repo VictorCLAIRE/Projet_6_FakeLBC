@@ -13,7 +13,7 @@
         </a>
       </li>
         <?php
-        //VISITEUR
+        //USER
         if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] == true){
         ?>
             <li class="nav-item active"><a class="nav-link" href="#">USER : <?=$_SESSION['name_user']?></a></li>
@@ -21,15 +21,16 @@
             <li class="nav-item active"><a class="nav-link" href="deconnexion.php">DECONNEXION</a></li>
 
         <?php
-        //USER
+        //ADMIN
         }elseif (isset($_SESSION['connecter_admin']) && $_SESSION['connecter_admin'] == true){
         ?>
             <li class="nav-item active"><a class="nav-link" href="#">ADMIN: <?=$_SESSION['name_admin']?></a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">GESTION DES ANNONCES</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">GESTION DES USER</a></li>
+            <li class="nav-item active"><a class="nav-link" href="gestionAllAnnonces">GESTION DES ANNONCES</a></li>
+            <li class="nav-item active"><a class="nav-link" href="gestionAllUser_Admin">GESTION DES USER/ADMIN</a></li>
             <li class="nav-item active"><a class="nav-link" href="deconnexion.php">DECONNEXION</a></li>
         <?php
-        //ADMIN
+
+        //VISITEUR
         }else{
         ?>
         <li class="nav-item active"><a class="nav-link" href="connexion">CONNEXION</a></li>

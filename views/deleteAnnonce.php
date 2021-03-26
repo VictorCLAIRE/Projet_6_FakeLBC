@@ -11,7 +11,7 @@ $ClasseReadUser = new ReadUser();
 $ClasseReadUser->ReadAnnonceID();
 ?>
 
-<h2>Modifier votre annonce:</h2>
+<h2>Supprimer votre annonce:</h2>
         <?php
         foreach ($ShowIDAnnonce as $row ){
             ?>

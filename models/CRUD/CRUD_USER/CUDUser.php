@@ -85,6 +85,7 @@ class CUDUser extends Database{
 
 
     }
+
     public function DeleteAnnonceUser(){
 
         $db = $this->getPDO();
