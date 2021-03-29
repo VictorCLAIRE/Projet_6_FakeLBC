@@ -34,7 +34,7 @@ $ClasseReadUser->ReadAnnonceID();
                 </div>
             </div>
             <form method="post">
-                <button type="submit" class="btn btn-danger btn-block btn-lg" name="BtnDeleteAnnonce">Suppresion de l'annonce</button>
+                <button type="submit" class="btn btn-danger btn-block btn-lg" name="BtnDeleteAnnonceAdmin">Suppresion de l'annonce</button>
             </form>
             <?php
         }

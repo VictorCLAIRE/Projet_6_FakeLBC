@@ -83,4 +83,17 @@ class ReadAdmin extends Database
 
     }
 
+    public function ReadAdminID(){
+        $db = $this->getPDO();
+
+        $sql = "SELECT * FROM projet_6_admin WHERE id_admin = ?";
+
+        $req = $db->prepare($sql);
+        $req->bindParam(1, $_GET['ID']);
+        $req->execute();
+
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 }

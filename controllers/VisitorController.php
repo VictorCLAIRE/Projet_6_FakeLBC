@@ -4,12 +4,33 @@ require_once "../models/CONNEXION/ConnexionAdmin.php";
 require_once "../models/Mailing.php";
 require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
 
-    function ShowAllAnnonce(){
+    function ShowAnnonceVisitor(){
 
-        $annonces = new ReadVisitor();
-        $allAnnonces = $annonces->ReadAllAnnonce();
-        require_once "../views/accueil.php";
+        $ReadAnnonces = new ReadVisitor();
+        $allAnnonces = $ReadAnnonces->ReadAllAnnonce();
+
+
+        require_once "../views/allAnnonceVisitor.php";
     }
+    function ShowAnnonceSearchVisitor(){
+
+        $ReadAnnonces = new ReadVisitor();
+        $searchAnnonces = $ReadAnnonces->ReadSearchAnnonce();
+
+        require_once "../views/resultatRecherche.php";
+    }
+    function ShowAnnonceSearchMapVisitor(){
+
+        $ReadAnnonces = new ReadVisitor();
+
+        $searchAnnoncesMap = $ReadAnnonces->ReadSearchMapAnnonce();
+
+        require_once "../views/resultatRechercheMap.php";
+    }
+
+
+
+
 
     function ConnexionVisitor(){
         $ConnexionAdmin = new ConnexionAdmin();
@@ -22,6 +43,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         }
 
     }
+
     function Inscription(){
 
         require_once "../views/formulaireInscription.php";
@@ -36,6 +58,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
             <?php
         }
     }
+
     function ValidationInscription(){
 
         require_once "../views/validationInscription.php";

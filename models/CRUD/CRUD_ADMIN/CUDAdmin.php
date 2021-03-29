@@ -72,5 +72,28 @@
 
         }
 
+        public function DeleteAdmin(){
+
+            $db = $this->getPDO();
+            $ID = $_GET['ID'];
+
+            $reqDelete= $db->prepare("DELETE FROM `projet_6_admin` WHERE `id_admin`= ?");
+
+            $requete_insertion=$reqDelete->execute(array($ID));
+
+        }
+
+        public function DeleteAnnonceAdmin(){
+
+            $db = $this->getPDO();
+            $ID = $_GET['ID'];
+
+            $reqDelete= $db->prepare("DELETE FROM `projet_6_annonces` WHERE `id_annonce`= ?");
+            $requete_insertion=$reqDelete->execute(array($ID));
+
+        }
+
+
+
     }
 

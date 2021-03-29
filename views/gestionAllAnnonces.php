@@ -25,7 +25,7 @@
             <td><?=$row['description_annonce']?></td>
             <td><img class="" src="<?=$row['photo_annonce']?>" width="150" height="150"></td>
             <td><?=$row['user_annonce']?></td>
-            <td><a class="btn btn-danger " href="deleteAnnonce.php?ID=<?=$row["id_annonce"]?>">Supprimer</a></td>
+            <td><a class="btn btn-danger " href="deleteAnnonceAdmin.php?ID=<?=$row["id_annonce"]?>">Supprimer</a></td>
         </tr>
         <?php
     }

@@ -32,6 +32,7 @@ class CUDUser extends Database{
         $req->execute();
 
     }
+
     public function UploadImg(){
 
         //Gestion upload image
@@ -49,6 +50,7 @@ class CUDUser extends Database{
             echo "";
         }
     }
+
     public function UploadImgUpdate(){
 
         //Gestion upload image

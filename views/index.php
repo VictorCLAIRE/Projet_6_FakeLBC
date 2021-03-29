@@ -18,7 +18,7 @@ if (isset($_GET['url'])) {
 // ROUTES
 if ($url == "accueil" ) {
     $title = "Accueil - Le MAUVAIS coin";
-    ShowAllAnnonce();
+    require_once "../views/accueil.php";
 
 }elseif ($url === "connexion" || $url === "connexion.php" ){
     $title = "Connexion - Le MAUVAIS coin";
@@ -47,9 +47,9 @@ if ($url == "accueil" ) {
     $title = "Update Annonce - Le MAUVAIS coin";
     UpdateAnnonce();
 
-}elseif ($url === "deleteAnnonce" || $url === "deleteAnnonce.php" ){
-    $title = "Delete annonce - Le MAUVAIS coin";
-    DeleteAnnonce();
+}elseif ($url === "deleteAnnonceUser" || $url === "deleteAnnonceUser.php" ){
+    $title = "Delete annonce User - Le MAUVAIS coin";
+    DeleteAnnonceUser();
 
 }elseif ($url === "deleteAnnonceByAdmin" || $url === "deleteAnnonceByAdmin.php" ){
     $title = "Delete annonce BY ADMIN - Le MAUVAIS coin";
@@ -90,7 +90,32 @@ if ($url == "accueil" ) {
 
     ShowCategoireID();
 
+}elseif ($url === "deleteAdmin" || $url === "deleteAdmin.php" ) {
+    $title = "Delete admin - Le MAUVAIS coin";
+
+    ShowAdminID();
+
+}elseif ($url === "deleteAnnonceAdmin" || $url === "deleteAnnonceAdmin.php" ){
+    $title = "Delete annonce Admin - Le MAUVAIS coin";
+    DeleteAnnonceAdmin();
+
+}elseif ($url === "allAnnonceVisitor" || $url === "allAnnonceVisitor.php" ){
+    $title = "Toutes les annonces - Le MAUVAIS coin";
+    ShowAnnonceVisitor();
+
+}elseif ($url === "resultatRecherche" || $url === "resultatRecherche.php" ){
+    $title = "Résultats recherche - Le MAUVAIS coin";
+    ShowAnnonceSearchVisitor();
+
+}elseif ($url === "resultatRechercheMap" || $url === "resultatRechercheMap.php" ){
+    $title = "Résultats recherche MAP - Le MAUVAIS coin";
+    ShowAnnonceSearchMapVisitor();
+
 }
+
+
+
+
 
 
 

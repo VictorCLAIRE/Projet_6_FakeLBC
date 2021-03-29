@@ -115,13 +115,34 @@ require_once "../models/CRUD/CRUD_ADMIN/CUDAdmin.php";
 
     }
 
+    function ShowAdminID(){
+            $ReadAdminById = new ReadAdmin();
 
+            $ShowAdminID = $ReadAdminById->ReadAdminID();
 
+            require_once "../views/deleteAdmin.php";
 
+            if (isset($_POST['BtnDeleteAdmin'])){
+                $DeleteAdmin = new CUDAdmin();
+                $EnvoiSuppresionAdmin = $DeleteAdmin-> DeleteAdmin();
+                $EnvoiSuppresionAdmin;
 
+                header("location:http://localhost/Projet_6_FakeLBC/gestionAllUser_Admin");
+            }
 
+        }
 
+    function DeleteAnnonceAdmin(){
+        $ReadAnnonceById = new ReadUser();
+        $ShowIDAnnonce=$ReadAnnonceById->ReadAnnonceID();
 
+        require_once "../views/DeleteAnnonceAdmin.php";
+        if (isset($_POST['BtnDeleteAnnonceAdmin'])){
+            $DeleteAnnonceAdmin = new CUDAdmin();
+            $EnvoiSuppresionAnnonce = $DeleteAnnonceAdmin-> DeleteAnnonceAdmin();
+            $EnvoiSuppresionAnnonce;
 
+            header("location:http://localhost/Projet_6_FakeLBC/gestionAllAnnonces");
+        }
 
-
+    }
