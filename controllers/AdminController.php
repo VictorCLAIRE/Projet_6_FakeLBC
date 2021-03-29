@@ -77,3 +77,51 @@ require_once "../models/CRUD/CRUD_ADMIN/CUDAdmin.php";
 
         require_once "../views/gestionAllAnnonces.php";
     }
+
+    function ShowAllCategorie(){
+        $ReadAdmin = new ReadAdmin();
+        $ShowAllCategorie = $ReadAdmin->ReadAllCategorie();
+        require_once "../views/gestionCategorie.php";
+
+    }
+
+    function CreateNewCategorie(){
+
+        require_once "../views/newCategorie.php";
+
+        if (isset($_POST['BtnNewCategorie'])){
+            $CreateCategorie = new CUDAdmin();
+            $EnvoiDesDonneesNewCategorie = $CreateCategorie-> CreateACategorie();
+            $EnvoiDesDonneesNewCategorie;
+
+            header("location:http://localhost/Projet_6_FakeLBC/gestionCategorie");
+        }
+    }
+
+    function ShowCategoireID(){
+        $ReadCategorieById = new ReadAdmin();
+
+        $ShowCategorieID = $ReadCategorieById->ReadCategorieID();
+
+        require_once "../views/deleteCategorie.php";
+
+        if (isset($_POST['BtnDeleteCategorie'])){
+            $DeleteCategorie = new CUDAdmin();
+            $EnvoiSuppresionCategorie = $DeleteCategorie-> DeleteCategorie();
+            $EnvoiSuppresionCategorie;
+
+            header("location:http://localhost/Projet_6_FakeLBC/gestionCategorie");
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+

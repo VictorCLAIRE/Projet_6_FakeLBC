@@ -11,7 +11,7 @@ $lecture= new LectureClefEtrangere();
             <div class="form-group">
                 <label for="Categorie">Catégorie:</label>
                 <select class="form-control" type="text" name="categorieSearch" id="categorieSearch">
-                    <option> </option>
+                    <option>Choix catégorie : </option>
                     <?php
                     $lecture->LectureCategorie();
                     ?>
@@ -20,7 +20,7 @@ $lecture= new LectureClefEtrangere();
             <div class="form-group">
                 <label for="Departement">Région:</label>
                 <select class="form-control" type="text" name="regionSearch" id="regionSearch">
-                    <option> </option>
+                    <option>Choix région : </option>
                     <?php
                     $lecture->LectureRegion();
                     ?>

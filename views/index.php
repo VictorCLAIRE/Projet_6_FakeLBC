@@ -75,7 +75,27 @@ if ($url == "accueil" ) {
     $title = "Update Admin - Le MAUVAIS coin";
     UpdateAdmin();
 
+}elseif ($url === "gestionCategorie" || $url === "gestionCategorie.php" ) {
+    $title = "Gestion catégorie - Le MAUVAIS coin";
+
+    ShowAllCategorie();
+
+}elseif ($url === "newCategorie" || $url === "newCategorie.php" ) {
+    $title = "New catégorie - Le MAUVAIS coin";
+
+    CreateNewCategorie();
+
+}elseif ($url === "deleteCategorie" || $url === "deleteCategorie.php" ) {
+    $title = "Delete catégorie - Le MAUVAIS coin";
+
+    ShowCategoireID();
+
 }
+
+
+
+
+
 
 
 

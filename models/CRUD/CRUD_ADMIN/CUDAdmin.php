@@ -47,5 +47,30 @@
             $requete_insertion=$reqUpdate->execute(array($id_update_admin));
         }
 
+        public function CreateACategorie(){
+            $db = $this->getPDO();
+
+            $name_categorie = $_POST['name_categorie'];
+
+            $sql = "INSERT INTO `projet_6_categories`(`name_categorie`) VALUES (?)";
+
+            $req = $db->prepare($sql);
+
+            $req->bindParam(1, $name_categorie);
+
+            $req->execute();
+        }
+
+        public function DeleteCategorie(){
+
+            $db = $this->getPDO();
+            $ID = $_GET['ID'];
+
+            $reqDelete= $db->prepare("DELETE FROM `projet_6_categories` WHERE `id_categorie`= ?");
+
+            $requete_insertion=$reqDelete->execute(array($ID));
+
+        }
+
     }
 

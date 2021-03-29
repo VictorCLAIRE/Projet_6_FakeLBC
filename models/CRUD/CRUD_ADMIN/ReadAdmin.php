@@ -13,6 +13,7 @@ class ReadAdmin extends Database
         return $stmt;
 
     }
+
     public function ReadAllAdmin(){
         $db = $this->getPDO();
         $sql ="SELECT * FROM projet_6_admin ORDER BY id_admin DESC";
@@ -23,6 +24,14 @@ class ReadAdmin extends Database
     public function ReadAllUser(){
         $db = $this->getPDO();
         $sql ="SELECT * FROM projet_6_user ORDER BY id_user DESC";
+        $stmt = $db->query($sql);
+        return $stmt;
+
+    }
+
+    public function ReadAllCategorie(){
+        $db = $this->getPDO();
+        $sql ="SELECT * FROM projet_6_categories ORDER BY id_categorie DESC";
         $stmt = $db->query($sql);
         return $stmt;
 
@@ -52,6 +61,19 @@ class ReadAdmin extends Database
         $db = $this->getPDO();
 
         $sql = "SELECT * FROM projet_6_admin WHERE id_admin = ?";
+
+        $req = $db->prepare($sql);
+        $req->bindParam(1, $_GET['ID']);
+        $req->execute();
+
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function ReadCategorieID(){
+        $db = $this->getPDO();
+
+        $sql = "SELECT * FROM projet_6_categories WHERE id_categorie = ?";
 
         $req = $db->prepare($sql);
         $req->bindParam(1, $_GET['ID']);

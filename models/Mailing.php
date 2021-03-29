@@ -21,7 +21,6 @@ class Mailing extends Database
             $email_user_inscription=$_POST['email_user_inscription'];
             $password_user_inscription=$_POST['password_user_inscription'];
 
-
             //Instantiation and passing `true` enables exceptions
             $mail = new PHPMailer(true);
 
