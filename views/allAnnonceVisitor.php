@@ -25,13 +25,26 @@
                             <p class="card-text"><?=$row['name_region']?></p>
                         </div>
                         <div class="card-body text-center">
-                            <a class="btn btn-warning btn-block btn-lg " href="updateAnnonce.php?ID=<?=$row["id_annonce"]?>">Modifier</a>
+                            <a class="btn btn-success btn-block btn-lg " href="achatAnnonce.php?ID=<?=$row["id_annonce"]?>">Acheter</a>
                         </div>
                         <div class="card-body text-center">
-                            <a class="btn btn-danger btn-block btn-lg " href="deleteAnnonce.php?ID=<?=$row["id_annonce"]?>">Supprimer</a>
+                            <div id="message<?=$row["id_annonce"]?>">
+                                <input type="button" class="btn btn-warning btn-block btn-lg" value="Affficher le n° du vendeur"  onclick="changerNumero<?=$row["id_annonce"]?>()">
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <a class="btn btn-success btn-block btn-lg" href="sendMailForBuy.php?ID=<?=$row["id_annonce"]?>">Contacter le vendeur</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <a class="btn btn-info btn-block btn-lg " href="">Télécharger en PDF</a>
                         </div>
                     </div>
                 </div>
+                <script type="text/javascript">
+                    function changerNumero<?=$row["id_annonce"]?>() {
+                        document.getElementById('message<?=$row["id_annonce"]?>').innerHTML = '<?=$row["phone_user"]?>';
+                    }
+                </script>
              <?php
             }
             ?>

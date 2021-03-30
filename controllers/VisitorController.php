@@ -9,9 +9,9 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         $ReadAnnonces = new ReadVisitor();
         $allAnnonces = $ReadAnnonces->ReadAllAnnonce();
 
-
         require_once "../views/allAnnonceVisitor.php";
     }
+
     function ShowAnnonceSearchVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
@@ -19,6 +19,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
 
         require_once "../views/resultatRecherche.php";
     }
+
     function ShowAnnonceSearchMapVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
@@ -28,9 +29,14 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         require_once "../views/resultatRechercheMap.php";
     }
 
+    function ShowAnnonceByIdVisitor(){
 
+        $ReadAnnonces = new ReadVisitor();
 
+        $searchAnnoncesById = $ReadAnnonces->ReadAnnonceByID();
 
+        require_once "../views/achatAnnonce.php";
+    }
 
     function ConnexionVisitor(){
         $ConnexionAdmin = new ConnexionAdmin();

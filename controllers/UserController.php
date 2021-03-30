@@ -50,7 +50,7 @@ require_once "../models/CRUD/CRUD_USER/ReadUser.php";
         $ReadAnnonceById = new ReadUser();
         $ShowIDAnnonce=$ReadAnnonceById->ReadAnnonceID();
 
-        require_once "../views/DeleteAnnonce.php";
+        require_once "../views/deleteAnnonceUser.php";
         if (isset($_POST['BtnDeleteAnnonce'])){
             $DeleteAnnonceUser = new CUDUser();
             $EnvoiSuppresionAnnonce = $DeleteAnnonceUser-> DeleteAnnonceUser();
@@ -59,4 +59,19 @@ require_once "../models/CRUD/CRUD_USER/ReadUser.php";
             header("location:http://localhost/Projet_6_FakeLBC/mesAnnonces");
         }
 
+    }
+
+    function SenMailToBuy(){
+
+        require_once "../views/sendMailForBuy.php";
+        if (isset($_POST['BtnSendMailToBuy'])){
+            $SendMailBuy = new MailingToBuy();
+            $EnvoiDuMail = $SendMailBuy->SendMailinToBuy();
+            $EnvoiDuMail;
+            ?>
+            <script>
+                alert('Vous allez recevoir un mail de confirmation. Merci de cliquer sur le lien ')
+            </script>
+            <?php
+        }
     }

@@ -29,7 +29,7 @@
                     <a class="btn btn-warning btn-block btn-lg " href="updateAnnonce.php?ID=<?=$row["id_annonce"]?>">Modifier</a>
                 </div>
                 <div class="card-body text-center">
-                    <a class="btn btn-danger btn-block btn-lg " href="deleteAnnonce.php?ID=<?=$row["id_annonce"]?>">Supprimer</a>
+                    <a class="btn btn-danger btn-block btn-lg " href="deleteAnnonceUser.php?ID=<?=$row[">Supprimer</a>
                 </div>
             </div>
         </div>

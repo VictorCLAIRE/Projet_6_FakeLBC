@@ -1,5 +1,5 @@
+<h1>ello</h1>
 <?php
-
 $id_annonce = $_GET['ID'];
 
 require_once "../models/CRUD/CRUD_USER/ReadUser.php";

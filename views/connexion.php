@@ -11,9 +11,8 @@ $logAdmin= new ConnexionAdmin();
     if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] == true){
         header("location:http://localhost/Projet_6_FakeLBC/accueil");
 //ADMIN
-    }elseif (isset($_SESSION['connecter_admin']) && $_SESSION['connecter_admin'] == true){
+    }elseif (isset($_SESSION['connecter_admin']) && $_SESSION['connecter_admin'] == true) {
         header("location:http://localhost/Projet_6_FakeLBC/accueil");
-
 //VISITEUR
     }else{
     ?>

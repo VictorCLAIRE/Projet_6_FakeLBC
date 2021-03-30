@@ -77,7 +77,6 @@ if ($url == "accueil" ) {
 
 }elseif ($url === "gestionCategorie" || $url === "gestionCategorie.php" ) {
     $title = "Gestion catégorie - Le MAUVAIS coin";
-
     ShowAllCategorie();
 
 }elseif ($url === "newCategorie" || $url === "newCategorie.php" ) {
@@ -92,7 +91,6 @@ if ($url == "accueil" ) {
 
 }elseif ($url === "deleteAdmin" || $url === "deleteAdmin.php" ) {
     $title = "Delete admin - Le MAUVAIS coin";
-
     ShowAdminID();
 
 }elseif ($url === "deleteAnnonceAdmin" || $url === "deleteAnnonceAdmin.php" ){
@@ -111,6 +109,17 @@ if ($url == "accueil" ) {
     $title = "Résultats recherche MAP - Le MAUVAIS coin";
     ShowAnnonceSearchMapVisitor();
 
+}elseif ($url === "achatAnnonce" || $url === "achatAnnonce.php" ){
+    $title = "Achat Annonce - Le MAUVAIS coin";
+    ShowAnnonceByIdVisitor();
+
+}elseif ($url === "sendMailForBuy" || $url === "sendMailForBuy.php" ){
+    $title = "Sen mail for buying - Le MAUVAIS coin";
+    if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] == true){
+        require_once "sendMailForBuy.php";
+    }else {
+        header("location:http://localhost/Projet_6_FakeLBC/connexion");
+    }
 }
 
 

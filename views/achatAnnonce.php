@@ -1,7 +1,8 @@
-<h1>hello</h1>
+<h1>Bienvenue sur la page d'ahat de l'annonce</h1>
+
 <div class="row">
     <?php
-    foreach ($searchAnnoncesMap as $row ){
+    foreach ($searchAnnoncesById as $row ){
         ?>
         <div class="col-4 ">
             <div class="card text-white bg-secondary m-1 " >
@@ -25,16 +26,14 @@
                     <h4 class="card-title">Région</h4>
                     <p class="card-text"><?=$row['name_region']?></p>
                 </div>
-                <div class="card-body text-center">
-                    <a class="btn btn-warning btn-block btn-lg " href="updateAnnonce.php?ID=<?=$row["id_annonce"]?>">Modifier</a>
-                </div>
-                <div class="card-body text-center">
-                    <a class="btn btn-danger btn-block btn-lg " href="deleteAnnonceUser.php?ID=<?=$row[">Supprimer</a>
-                </div>
             </div>
         </div>
         <?php
     }
     ?>
+    <div class="col-8 ">
+        Formulaire d'achat
+    </div>
+
 
 </div>
