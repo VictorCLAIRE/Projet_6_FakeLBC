@@ -16,6 +16,7 @@ class ReadUser extends Database{
         return $req->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
     public function ReadAnnonceID(){
         $db = $this->getPDO();
 
@@ -23,6 +24,19 @@ class ReadUser extends Database{
 
         $req = $db->prepare($sql);
         $req->bindParam(1, $_GET['ID']);
+        $req->execute();
+
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function ReadInfoUser(){
+        $db = $this->getPDO();
+
+        $sql = "SELECT * FROM projet_6_user WHERE id_user = ?";
+
+        $req = $db->prepare($sql);
+        $req->bindParam(1, $_SESSION['ID_user']);
         $req->execute();
 
         return $req->fetchAll(PDO::FETCH_ASSOC);

@@ -6,6 +6,7 @@ require_once "../controllers/VisitorController.php";
 require_once "../controllers/UserController.php";
 require_once "../controllers/AdminController.php";
 
+
 ob_start();
 
 //BASE
@@ -116,6 +117,7 @@ if ($url == "accueil" ) {
 }elseif ($url === "sendMailForBuy" || $url === "sendMailForBuy.php" ){
     $title = "Sen mail for buying - Le MAUVAIS coin";
     if (isset($_SESSION['connecter_user']) && $_SESSION['connecter_user'] == true){
+        SendmailToBuy();
         require_once "sendMailForBuy.php";
     }else {
         header("location:http://localhost/Projet_6_FakeLBC/connexion");

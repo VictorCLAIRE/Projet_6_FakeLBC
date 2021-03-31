@@ -1,8 +1,14 @@
+
+<!-------------------APPEL DE LA FONCTION DE LECTURE DE TOUTES LES ANNONCES---------------------->
+
     <div class="row">
         <?php
             foreach ($allAnnonces as $row ){
                 ?>
                 <div class="col-4 ">
+
+<!-------------------CARTE DE LECTURE DE CHAQUE ANNONCE---------------------->
+
                     <div class="card text-white bg-secondary m-1 " >
                         <div class="card-header"><?=$row['nom_annonce']?></div>
                         <img class="d-block user-select-none" src="<?php echo $row['photo_annonce'] ?>" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
@@ -36,7 +42,13 @@
                             <a class="btn btn-success btn-block btn-lg" href="sendMailForBuy.php?ID=<?=$row["id_annonce"]?>">Contacter le vendeur</a>
                         </div>
                         <div class="card-body text-center">
-                            <a class="btn btn-info btn-block btn-lg " href="">Télécharger en PDF</a>
+                            <form method="post" action="allAnnonceVisitor.php">
+                                <input type="hidden" name="nom_annonce" value="<?=$row['nom_annonce']?>">
+                                <input type="hidden" name="description_annonce" value="<?=$row['description_annonce']?>">
+                                <input type="hidden" name="prix_annonce" value="<?=$row['prix_annonce']?>">
+                                <input type="hidden" name="region_annonce" value="<?=$row['name_region']?>">
+                                <button type="submit" name="exportPdf" class="btn btn-info btn-block btn-lg ">Télécharger en PDF</button>
+                            </form>
                         </div>
                     </div>
                 </div>

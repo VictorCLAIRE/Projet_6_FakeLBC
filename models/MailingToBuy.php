@@ -14,12 +14,11 @@ require_once "../models/Database.php";
 
 class MailingToBuy extends Database
 {
+    public function SendMailToBuy(){
 
-    public function SendMailinToBuy(){
-
-        $name_user_inscription=$_POST['name_user_inscrition'];
-        $email_user_inscription=$_POST['email_user_inscription'];
-        $password_user_inscription=$_POST['password_user_inscription'];
+        $name_ask_to_buy = $_POST['name_ask_to_buy'];
+        $email_ask_to_buy = $_POST['email_ask_to_buy'];
+        $message_ask_to_buy = $_POST['message_ask_to_buy'];
 
         //Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -45,8 +44,8 @@ class MailingToBuy extends Database
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
 
-            $mail->Subject = "Validation de votre inscription";
-            $url = "http://localhost/Projet_6_FakeLBC/validationInscription.php&name=".$name_user_inscription."&email=".$email_user_inscription."&password=".$password_user_inscription."";
+            $mail->Subject = "Demande concernant une de vos annonces mis en ligne";
+            $url = "";
 
             $mail->Body    = '
                  <!DOCTYPE html>
@@ -61,17 +60,12 @@ class MailingToBuy extends Database
                     <div style="background-color: #F0F1F2; color: #1D2326; padding: 20px;">
                         
                         <h3 style="color: #1D2326">Le MAUVAIS COIN</h3>
-                        <p>Vous venez de créer un compte chez nous. Merci!</p>
-                        <form method="post" action="http://localhost/Projet_6_FakeLBC/validationInscription.php"
-                            <input type="hidden" name="name_user_inscription">'.$name_user_inscription.'</input>
-                            <input type="hidden" name="email_user_inscription">'.$email_user_inscription.'</input>
-                            <input type="hidden" name="password_user_inscription">'.$password_user_inscription.'</input>
-                            <p>Votre nom: '.$name_user_inscription.'</p>
-                            <p>Votre email '.$email_user_inscription.':</p>
-                            <p>Votre password '.$password_user_inscription.' :</p>
-                            <a type="submit" href="' . $url . '" style="background-color: darkred; color: #F0F1F2; padding: 10px;margin: 2px; text-decoration: none;">Confimer votre inscription</a><br />
-                        </form>
-                        
+                        <p>Vous avez recu un message d\' un potentiel acheteur!</p>
+
+                            <p>'.$name_ask_to_buy.' vous écrit :</p>
+                            <p>'.$message_ask_to_buy.':</p>
+                            <p>Pour lui répondre : '.$email_ask_to_buy.' </p>
+
                         <br />
                         <p>Merci d\'utiliser notre site web</p> 
                     </div>

@@ -2,16 +2,27 @@
 require_once "../models/CRUD/CRUD_VISITOR/ReadVisitor.php";
 require_once "../models/CONNEXION/ConnexionAdmin.php";
 require_once "../models/Mailing.php";
+require_once "../models/Pdf.php";
 require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
 
+
+
+//---------------------------------LECTURE DE TOUTES LES ANNONCES------------------------------------------------------------------------------------>
     function ShowAnnonceVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
         $allAnnonces = $ReadAnnonces->ReadAllAnnonce();
 
+        if(isset($_POST['exportPdf'])){
+            $pdfCreate = new Pdf();
+            $DownloadPdf = $pdfCreate->CreatePdf();
+            $DownloadPdf;
+        }
+
         require_once "../views/allAnnonceVisitor.php";
     }
 
+//---------------------------------LECTURE DES ANNONCES SELON LES CRITERES DE RECHERCHE DU FORMULAIRE----------------------------------------------->
     function ShowAnnonceSearchVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
@@ -20,6 +31,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         require_once "../views/resultatRecherche.php";
     }
 
+//---------------------------------LECTURE DES ANNONCES SELON LES CRITERES DE RECHERCHE DE LA CARTE INTERRACTIVE------------------------------------>
     function ShowAnnonceSearchMapVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
@@ -29,6 +41,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         require_once "../views/resultatRechercheMap.php";
     }
 
+//---------------------------------LECTURE D'UNE ANNONCES SELON SON ID------------------------------------------------------------------------------>
     function ShowAnnonceByIdVisitor(){
 
         $ReadAnnonces = new ReadVisitor();
@@ -50,6 +63,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
 
     }
 
+//---------------------------------ENVOI DES DONNES DU FORMULAIRE D'INSCRIPTION DANS LE MAIL--------------------------------------------------------->
     function Inscription(){
 
         require_once "../views/formulaireInscription.php";
@@ -65,6 +79,7 @@ require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
         }
     }
 
+//---------------------------------RECUP DES DONNES DU FORMULAIRE D'INSCRIPTION DANS LE MAIL ET INSERTION DES DONNES DANS LA BD---------------------->
     function ValidationInscription(){
 
         require_once "../views/validationInscription.php";

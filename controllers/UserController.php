@@ -1,6 +1,7 @@
 <?php
 require_once "../models/CRUD/CRUD_USER/CUDUser.php";
 require_once "../models/CRUD/CRUD_USER/ReadUser.php";
+require_once "../models/MailingToBuy.php";
 
     function ReadAllAnnonceUser(){
 
@@ -61,16 +62,19 @@ require_once "../models/CRUD/CRUD_USER/ReadUser.php";
 
     }
 
-    function SenMailToBuy(){
+    function SendmailToBuy(){
+        $ReadInfoUser = new ReadUser();
+
+        $ShowInfoUser=$ReadInfoUser->ReadInfoUser();
 
         require_once "../views/sendMailForBuy.php";
         if (isset($_POST['BtnSendMailToBuy'])){
             $SendMailBuy = new MailingToBuy();
-            $EnvoiDuMail = $SendMailBuy->SendMailinToBuy();
+            $EnvoiDuMail = $SendMailBuy->SendMailToBuy();
             $EnvoiDuMail;
             ?>
             <script>
-                alert('Vous allez recevoir un mail de confirmation. Merci de cliquer sur le lien ')
+                alert('Votre Mail a bien été envoyé ')
             </script>
             <?php
         }
