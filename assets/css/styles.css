@@ -1,3 +1,28 @@
+html{
+    overflow-x: hidden;
+}
 .NewAnnonce{
     border: black solid 1px;
+}
+.titrePage{
+    background-color: #18BC89;
+    color: #2C3E50;
+    text-align: center;
+    font-weight: bold ;
+    height: 75px;
+}
+.barDeRecherche{
+    text-align: center;
+    background-color: #70ABF3;
+}
+.mapAccueil{
+    background-color:#c4c4c4 ;
+}
+.TitreMapAccueil{
+    text-align: center;
+    color: black ;
+    font-weight: bold ;
+}
+#canvasMap{
+
 }

@@ -3,21 +3,27 @@ require_once "../models/CRUD/CRUD_VISITOR/ReadVisitor.php";
 require_once "../models/CONNEXION/ConnexionAdmin.php";
 require_once "../models/Mailing.php";
 require_once "../models/Pdf.php";
+require_once "../models/Pagination.php";
 require_once "../models/CRUD/CRUD_VISITOR/CUDVisitor.php";
 
 
 
 //---------------------------------LECTURE DE TOUTES LES ANNONCES------------------------------------------------------------------------------------>
     function ShowAnnonceVisitor(){
+        if(isset($_POST['exportPdf'])){
+            $pdfCreate = new Pdf();
+            $pdfCreate->CreatePdf();
+        }
+        $pagination = new Pagination();
+        $UsePagination = $pagination->compteDesannonces();
+        $UsePagination ;
+        $nbAnnonces;
+
 
         $ReadAnnonces = new ReadVisitor();
         $allAnnonces = $ReadAnnonces->ReadAllAnnonce();
 
-        if(isset($_POST['exportPdf'])){
-            $pdfCreate = new Pdf();
-            $DownloadPdf = $pdfCreate->CreatePdf();
-            $DownloadPdf;
-        }
+
 
         require_once "../views/allAnnonceVisitor.php";
     }

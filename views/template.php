@@ -11,7 +11,7 @@
     <title><?= $title ?></title>
 </head>
 
-<body>
+<div>
     <!-- Header-->
     <header>
         <?php
@@ -20,7 +20,8 @@
     </header>
     <!-- Content-->
 
-    <div class="container">
+    <div class="mt-5">
+        <br>
         <?= $content ?>
     </div>
 

@@ -16,6 +16,7 @@ $logAdmin= new ConnexionAdmin();
 //VISITEUR
     }else{
     ?>
+    <div>
         <form class="" method="post" >
             <h2>FORMULAIRE USER</h2>
             <div class="form-group">
@@ -33,7 +34,9 @@ $logAdmin= new ConnexionAdmin();
             $logUser->VerificationUser();
         }
         ?>
+    </div>
 
+    <div>
         <form class="" method="post" >
             <h2>FORMULAIRE ADMIN</h2>
             <div class="form-group">
@@ -51,4 +54,7 @@ $logAdmin= new ConnexionAdmin();
             $logAdmin->VerificationAdmin();
         }
     }
+    ?>
+    </div>
+
 

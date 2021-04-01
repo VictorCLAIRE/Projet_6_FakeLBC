@@ -25,12 +25,7 @@
                     <h4 class="card-title">Région</h4>
                     <p class="card-text"><?=$row['name_region']?></p>
                 </div>
-                <div class="card-body text-center">
-                    <a class="btn btn-warning btn-block btn-lg " href="updateAnnonce.php?ID=<?=$row["id_annonce"]?>">Modifier</a>
-                </div>
-                <div class="card-body text-center">
-                    <a class="btn btn-danger btn-block btn-lg " href="deleteAnnonceUser.php?ID=<?=$row[">Supprimer</a>
-                </div>
+
             </div>
         </div>
         <?php

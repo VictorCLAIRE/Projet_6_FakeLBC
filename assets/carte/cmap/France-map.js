@@ -10,12 +10,11 @@ License: non-comercial
 
 // MAP CONFIG  ///////////////////////////////////////////////////////////////////////
 
-var mapcolor = "#70ABF3";			// couleur de fond de carte
-var mapcolor_hover = "#FF0000";		// couleur de survol de la souris
-var maplines = "#FFFFFF";			// couleur des traits de séparation des régions
+var mapcolor = "#2C3E50";			// couleur de fond de carte
+var mapcolor_hover = "#70ABF3";		// couleur de survol de la souris
+var maplines = "#18BC89";			// couleur des traits de séparation des régions
 
 //
-
 
 // MAP LINKS  ///////////////////////////////////////////////////////////////////////
 
@@ -107,7 +106,7 @@ $(function(){
           render();
         }
         function clear(){    
-          c.fillStyle = "#FFFFFF";
+          c.fillStyle = "#c4c4c4";
           c.fillRect(0, 0, canvas.width, canvas.height);
         }
 	arr = new Array();
