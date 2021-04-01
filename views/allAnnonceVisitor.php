@@ -20,10 +20,13 @@ $parPage = 9;
 $premier = ($currentPage * $parPage) - $parPage;
 
 ?>
+<div class="titrePage container-fluid">
+    <h1>Toutes les annonces</h1>
+</div>
 
 <!-------------------APPEL DE LA FONCTION DE LECTURE DE TOUTES LES ANNONCES---------------------->
 
-    <div class="row">
+    <div class="row divAllAnnonces">
         <?php
             foreach ($allAnnonces as $row ){
                 ?>
@@ -32,35 +35,57 @@ $premier = ($currentPage * $parPage) - $parPage;
 <!-------------------CARTE DE LECTURE DE CHAQUE ANNONCE---------------------->
 
                     <div class="card text-white bg-secondary m-1 " >
-                        <div class="card-header"><?=$row['nom_annonce']?></div>
-                        <img class="d-block user-select-none" src="<?php echo $row['photo_annonce'] ?>" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                        </img>
-                        <div class="card-body">
-                            <h4 class="card-title">Description</h4>
-                            <p class="card-text"><?=$row['description_annonce']?></p>
+                        <div class="card-header text-center titreAnnonce">
+                            <h4><?=$row['nom_annonce']?></h4>
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Prix : <?=$row['prix_annonce']?> €</h4>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Catégorie : <?=$row['name_categorie']?></h4>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Région : <?=$row['name_region']?></h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <a class="btn btn-success btn-block btn-lg m-1 " href="achatAnnonce.php?ID=<?=$row["id_annonce"]?>">Acheter</a>
-                            <div id="message<?=$row["id_annonce"]?>">
-                                <input type="button" class="btn btn-warning btn-block btn-lg m-1" value="Affficher le n° du vendeur"  onclick="changerNumero<?=$row["id_annonce"]?>()">
+                        <div class="row divPhotoButton">
+                            <div class="col-6 ">
+                                <img class="d-block user-select-none m-2 " src="<?php echo $row['photo_annonce'] ?>" width="150" height="150" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
                             </div>
-                            <a class="btn btn-success btn-block btn-lg m-1" href="sendMailForBuy.php?ID=<?=$row["id_annonce"]?>">Contacter le vendeur</a>
+                            <div class="col-6">
+                                <a class="btn buttonContacterVendeur m-2" href="sendMailForBuy.php?ID=<?=$row["id_annonce"]?>">Contacter le vendeur</a>
+                                <div id="message<?=$row["id_annonce"]?>">
+                                    <a class="btn buttonNumeroVendeur m-2" type="button" onclick="changerNumero<?=$row["id_annonce"]?>()">Affficher le n° du vendeur</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="divDescriptionCard">
+                                <h4 class="card-title CardTitleOption">Description</h4>
+                                <p class="card-text CardTextOption" style="height: 25px"><?=$row['description_annonce']?></p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="card-title text-center CardTitleOption ">Prix :</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="card-title CardTextOption"> <?=$row['prix_annonce']?> €</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="card-title text-center CardTitleOption ">Catégorie :</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="card-title CardTextOption"> <?=$row['name_categorie']?></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="card-title text-center CardTitleOption ">Région :</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="card-title CardTextOption"> <?=$row['name_region']?></h4>
+                                </div>
+                            </div>
+                            <a class="btn buttonAcheter btn-block btn-lg m-2 " href="achatAnnonce.php?ID=<?=$row["id_annonce"]?>">Acheter</a>
                             <form method="post" action="allAnnonceVisitor.php">
                                 <input type="hidden" name="nom_annonce" value="<?=$row['nom_annonce']?>">
                                 <input type="hidden" name="description_annonce" value="<?=$row['description_annonce']?>">
                                 <input type="hidden" name="prix_annonce" value="<?=$row['prix_annonce']?>">
                                 <input type="hidden" name="region_annonce" value="<?=$row['name_region']?>">
-                                <button type="submit" name="exportPdf" class="btn btn-info btn-block btn-lg m-1">Télécharger en PDF</button>
+                                <button type="submit" name="exportPdf" class="btn buttonPdf btn-block btn-lg m-2">Télécharger en PDF</button>
                             </form>
                         </div>
                     </div>

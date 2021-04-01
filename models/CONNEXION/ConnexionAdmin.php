@@ -8,20 +8,20 @@ class ConnexionAdmin extends Database
 
         $db = $this-> getPDO();
 
-        if (!empty($_POST['email_admin_loger']) && !empty($_POST['password_admin_loger'])) {
+        if (!empty($_POST['email_loger']) && !empty($_POST['password_loger'])) {
 
             $sql = "SELECT * FROM projet_6_admin WHERE email_admin = ? AND password_admin = ?";
 
             $req = $db->prepare($sql);
 
-            $req->bindParam(1, $_POST['email_admin_loger']);
-            $req->bindParam(2, $_POST['password_admin_loger']);
+            $req->bindParam(1, $_POST['email_loger']);
+            $req->bindParam(2, $_POST['password_loger']);
 
             $req->execute();
             $row=$req->fetch(PDO::FETCH_ASSOC);
 
 
-            if (($_POST['email_admin_loger'] == $row['email_admin']) && ($_POST['password_admin_loger'] == $row['password_admin'])) {
+            if (($_POST['email_loger'] == $row['email_admin']) && ($_POST['password_loger'] == $row['password_admin'])) {
 
                 session_start();
                 $_SESSION['connecter_admin'] = true;
@@ -34,7 +34,7 @@ class ConnexionAdmin extends Database
                 echo "L'email ou le mdp n'est pas bon (admin)";
             }
 
-        } elseif (empty($_POST['email_admin_loger']) || empty($_POST['password_admin_loger'])) {
+        } elseif (empty($_POST['email_loger']) || empty($_POST['password_loger'])) {
 
             echo "<div class='alert alert-danger m-2 text-center' role='alert'>Merci de remplir tous les champs</div>";
 

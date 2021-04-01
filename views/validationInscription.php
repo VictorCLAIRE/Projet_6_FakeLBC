@@ -2,6 +2,7 @@
 $name_user_inscrption = $_GET['name'];
 $email_user_inscrption = $_GET['email'];
 $password_user_inscrption = $_GET['password'];
+$phone_user_inscrption = $_GET['phone'];
 
 ?>
 

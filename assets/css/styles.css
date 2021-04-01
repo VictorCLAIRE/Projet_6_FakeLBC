@@ -23,6 +23,71 @@ html{
     color: black ;
     font-weight: bold ;
 }
-#canvasMap{
+
+.formulaireConnexion{
+    padding: 10px;
+    background-color: #70ABF3;
 
 }
+.ContenueDuFomulaireConnexion{
+    text-align: center;
+    margin-left: 625px;
+    font-weight: bold ;
+    width: 250px;
+}
+.formulaireInscription{
+    padding: 10px;
+    background-color: #70ABF3;
+}
+.ContenueDuFomulaireInscription{
+    text-align: center;
+    margin-left: 575px;
+    font-weight: bold ;
+    width: 350px;
+}
+.buttonContacterVendeur{
+    background-color: #18BC89;
+    color: white;
+}
+.buttonNumeroVendeur{
+    background-color: #2C3E50;
+    color: white;
+}
+.buttonPdf{
+    background-color: #2C3E50;
+    color: white;
+}
+.buttonAcheter{
+    background-color: #18BC89;
+    color: white;
+}
+.divPhotoButton{
+    height: 150px;
+}
+.titreAnnonce{
+    height: 75px;
+    color: #2C3E50;
+}
+.titreAnnonceMesAnnonces{
+    height: 75px;
+    color: #2C3E50;
+}
+.divAllAnnonces{
+    background-color: #c6c6c6;
+}
+.CardTitleOption{
+    color: #2C3E50;
+    font-weight: bold;
+}
+.CardTextOption{
+    color: #2C3E50;
+
+}
+.divDescriptionCard{
+    height: 100px;
+}
+.titreMesAnnoncesClasse{
+    color: #18BC89 ;
+    font-weight: bold;
+}
+

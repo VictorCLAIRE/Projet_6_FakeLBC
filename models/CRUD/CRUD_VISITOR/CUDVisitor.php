@@ -10,14 +10,16 @@ class CUDVisitor extends Database
         $name_user_inscrption = $_GET['name'];
         $email_user_inscrption = $_GET['email'];
         $password_user_inscrption = $_GET['password'];
+        $phone_user_inscrption = $_GET['phone'];
 
-        $sql = "INSERT INTO `projet_6_user`(`name_user`, `email_user`, `password_user`) VALUES (?,?,?)";
+        $sql = "INSERT INTO `projet_6_user`(`name_user`, `email_user`, `password_user`,`phone_user`) VALUES (?,?,?,?)";
 
         $req = $db->prepare($sql);
 
         $req->bindParam(1, $name_user_inscrption);
         $req->bindParam(2, $email_user_inscrption);
         $req->bindParam(3, $password_user_inscrption);
+        $req->bindParam(4, $phone_user_inscrption);
 
         $req->execute();
 

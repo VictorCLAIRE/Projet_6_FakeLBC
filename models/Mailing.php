@@ -20,6 +20,8 @@ class Mailing extends Database
             $name_user_inscription=$_POST['name_user_inscrition'];
             $email_user_inscription=$_POST['email_user_inscription'];
             $password_user_inscription=$_POST['password_user_inscription'];
+            $phone_user_inscription=$_POST['phone_user_inscription'];
+
 
             //Instantiation and passing `true` enables exceptions
             $mail = new PHPMailer(true);
@@ -46,7 +48,8 @@ class Mailing extends Database
                 $mail->isHTML(true);                                  //Set email format to HTML
 
                 $mail->Subject = "Validation de votre inscription";
-                $url = "http://localhost/Projet_6_FakeLBC/validationInscription.php&name=".$name_user_inscription."&email=".$email_user_inscription."&password=".$password_user_inscription."";
+                $url = "http://localhost/Projet_6_FakeLBC/validationInscription.php&name=".$name_user_inscription."&email=".$email_user_inscription."&password=".$password_user_inscription."&phone=".$phone_user_inscription."";
+
 
                     $mail->Body    = '
                  <!DOCTYPE html>
@@ -66,8 +69,12 @@ class Mailing extends Database
                             <input type="hidden" name="name_user_inscription">'.$name_user_inscription.'</input>
                             <input type="hidden" name="email_user_inscription">'.$email_user_inscription.'</input>
                             <input type="hidden" name="password_user_inscription">'.$password_user_inscription.'</input>
+                            <input type="hidden" name="phone_user_inscription">'.$phone_user_inscription.'</input>
+                            
+                          
                             <p>Votre nom: '.$name_user_inscription.'</p>
                             <p>Votre email '.$email_user_inscription.':</p>
+                            <p>Votre n° de téléphone '.$phone_user_inscription.':</p>
                             <p>Votre password '.$password_user_inscription.' :</p>
                             <a type="submit" href="' . $url . '" style="background-color: darkred; color: #F0F1F2; padding: 10px;margin: 2px; text-decoration: none;">Confimer votre inscription</a><br />
                         </form>

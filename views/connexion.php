@@ -16,45 +16,34 @@ $logAdmin= new ConnexionAdmin();
 //VISITEUR
     }else{
     ?>
-    <div>
-        <form class="" method="post" >
-            <h2>FORMULAIRE USER</h2>
-            <div class="form-group">
-                <label for="email_admin_loger">Email</label>
-                <input class="form-control" type="email" id="email_user_loger" name="email_user_loger">
-            </div>
-            <div class="form-group">
-                <label for="mdp">Mot de passe</label>
-                <input class="form-control" type="text" id="mdp_user_loger" name="password_user_loger">
-            </div>
-            <button class="btn btn-success" type="submit" value="connexion_user" name="connexion_user" >Connexion</button>
-        </form>
-        <?php
-        if(isset($_POST['connexion_user'])){
-            $logUser->VerificationUser();
-        }
-        ?>
+    <div class="titrePage container-fluid">
+        <h1>Connectez-vous</h1>
     </div>
+            <div class="formulaireConnexion">
+                <div class="ContenueDuFomulaireConnexion">
+                    <form class="" method="post" >
+                        <div class="form-group">
+                            <label for="email_loger">Email</label>
+                            <input class="form-control" type="email" id="email_loger" name="email_loger">
+                        </div>
+                        <div class="form-group">
+                            <label for="mdp">Mot de passe</label>
+                            <input class="form-control" type="text" id="mdp_loger" name="password_loger">
+                        </div>
+                        <button class="btn btn-success" type="submit" value="connexion_user" name="connexion" >Connexion</button>
+                    </form>
+                </div>
+                <?php
+                if(isset($_POST['connexion'])){
+                    $logUser->VerificationUser();
+                    $logAdmin->VerificationAdmin();
+                }
+                }
+                ?>
+            </div>
 
-    <div>
-        <form class="" method="post" >
-            <h2>FORMULAIRE ADMIN</h2>
-            <div class="form-group">
-                <label for="email_admin_loger">Email</label>
-                <input class="form-control" type="email" id="email_admin_loger" name="email_admin_loger">
-            </div>
-            <div class="form-group">
-                <label for="mdp">Mot de passe</label>
-                <input class="form-control" type="text" id="mdp_admin_loger" name="password_admin_loger">
-            </div>
-            <button class="btn btn-success" type="submit" value="connexion_admin" name="connexion_admin" >Connexion</button>
-        </form>
-        <?php
-        if(isset($_POST['connexion_admin'])){
-            $logAdmin->VerificationAdmin();
-        }
-    }
-    ?>
-    </div>
+
+
+
 
 
